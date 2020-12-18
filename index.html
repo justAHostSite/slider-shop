@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GLITCH</title>
+    <style>
+        *, *:after, *:before {-moz-box-sizing:border-box; box-sizing:border-box;}
+        body, html {position: relative; height: 100%; width: 100%; overflow: hidden;}
+        body { background-color: #fff; margin: 0;}
+
+        .container {position: relative; margin: 80px; background-color: #fff; width: calc(100% - 160px); height: calc(100% - 160px); overflow: hidden; }
+
+        /* glitch elem must have absolute position */
+        .glitch-img {position: absolute; width : 100%; height : 100%; top: 0 ; left : 0; background-position:center;  -moz-background-size:cover;-o-background-size:cover;-webkit-background-size:cover;background-size:cover;
+        } 
+        
+    </style>
+</head>   
+<body>
+
+    <div class="container">
+        <!-- this elem will be glitch -->
+      <div class="glitch-img" style="background-image: url('bg2.png"></div>
+    </div>
+    <!-- include jQuery -->
+    <script src="jquery-3.5.1.min.js"></script>
+
+    <!-- include plugin src -->
+    <script src="mgGlitch.min.js"></script>
+    
+    <!-- active plugin -->
+    <script>
+	$( function() {
+		$( ".glitch-img" ).mgGlitch({
+			destroy : false, // set 'true' to stop the plugin
+                        glitch: true, // set 'false' to stop glitching
+                        scale: true, // set 'false' to stop scaling
+                        blend : true, // set 'false' to stop glitch blending
+                        blendModeType : 'hue', // select blend mode type
+                        glitch1TimeMin : 600, // set min time for glitch 1 elem
+                        glitch1TimeMax : 900, // set max time for glitch 1 elem
+                        glitch2TimeMin : 10, // set min time for glitch 2 elem
+                        glitch2TimeMax : 115, // set max time for glitch 2 elem
+		});
+	});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
